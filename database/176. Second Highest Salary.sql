@@ -16,14 +16,12 @@ from employee)
 where N = 2;
 
 /* Solution from forum*/
-SELECT max(Salary)
+SELECT max(Salary) SecondHighestSalary
 FROM Employee
-WHERE Salary < (SELECT max(Salary) FROM Employee)
+WHERE Salary < (SELECT max(Salary) FROM Employee);
 
 /* Accepted solution */
-SELECT DISTINCT
-    Salary AS SecondHighestSalary
-FROM
-    Employee
+SELECT DISTINCT Salary AS SecondHighestSalary
+FROM Employee
 ORDER BY Salary DESC
-LIMIT 1 OFFSET 1
+LIMIT 1 OFFSET 1;
