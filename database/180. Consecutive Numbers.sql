@@ -24,4 +24,4 @@ FROM
 SELECT num,LEAD(num) OVER(ORDER BY id) AS lead, LAG(num) OVER (ORDER BY id) AS lag
 FROM Logs
 )t
-WHERE num=lead and num=lag;
+WHERE num=lead and num=lag; 
